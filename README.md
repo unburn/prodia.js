@@ -68,6 +68,3 @@ If an error occurs during API requests, the library will output a message to the
 
 - If the API key is not set, the error message will be "The Prodia API Key is not set. Go to https://app.prodia.com/api and get an API key."
 - If the generation parameters are invalid, the error message will be "Invalid Generation Parameters: ${statusCode}".
-
-## License
-This library is licensed under the [MIT License](https://github.com/ryzvision/prodia/blob/main/LICENSE)
