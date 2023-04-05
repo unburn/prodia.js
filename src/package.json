@@ -1,5 +1,5 @@
 {
-  "name": "prodia",
+  "name": "prodia-api",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -17,5 +17,13 @@
   "description": "AI image generator package, using the Prodia API, is fast and easy to use.",
   "dependencies": {
     "node-fetch": "^2.6.7"
+  },
+  "homepage": "https://github.com/ryzvision/prodia-api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryzvision/prodia-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryzvision/prodia-api/issues"
   }
 }
