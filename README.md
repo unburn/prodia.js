@@ -1,8 +1,11 @@
 ![Alt text](https://raw.githubusercontent.com/ryzvision/prodia/main/assets/prodia-banner.jpg "a title")
 
-# Prodia API
+# Prodia Image API
 
 This is a Node.js library for accessing the [Prodia API](https://docs.prodia.com/reference/getting-started). It allows you to easily create AI images.
+
+Unleash your creativity with lightning-fast performance and transform your ideas into stunning visuals in seconds.
+
 ## Installation
 
 Install the library using npm:
@@ -10,6 +13,8 @@ Install the library using npm:
 ```
 npm i prodia-ai
 ```
+
+Make sure you're using node >= 18 so fetch is available.
 
 ## Usage
 
