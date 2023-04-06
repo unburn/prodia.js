@@ -68,3 +68,11 @@ If an error occurs during API requests, the library will output a message to the
 
 - If the API key is not set, the error message will be "The Prodia API Key is not set. Go to https://app.prodia.com/api and get an API key."
 - If the generation parameters are invalid, the error message will be "Invalid Generation Parameters: ${statusCode}".
+
+## Support Server
+
+Issue with API, Join official [Prodia server](https://discord.gg/495hz6vrFN)
+
+Join my support server for package issues & code help (also have fun)
+
+[<img src="https://discordapp.com/api/guilds/789443193989103648/widget.png?style=banner2" alt="Discord Banner 1"/>](https://discord.gg/TvjrWtEuyP)
