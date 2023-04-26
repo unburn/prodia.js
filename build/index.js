@@ -9,7 +9,6 @@ const headers = () => {
     //No API Key Set
     if (!apiKey) {
         console.error("\x1b[31m[Error]\x1b[0m You must set your API key before using this library. See https://app.prodia.com/api for more information.");
-        process.exit();
     }
 
     return {
@@ -28,19 +27,16 @@ const createJob = async (params) => {
     //Invalid API Key (401)
     if (response.status === 401) {
         console.error(`\x1b[31m[Error]\x1b[0m Your API key is incorrect. See https://app.prodia.com/api for more information.`);
-        process.exit();
     }
 
     //API Access Not Enabled (402)
     if (response.status === 402) {
         console.error(`\x1b[31m[Error]\x1b[0m API Access Not Enabled. See https://app.prodia.com/api for more information.`);
-        process.exit();
     }
 
     //Invalid Generation Parameters (400)
     if (response.status === 400) {
         console.error(`\x1b[31m[Error]\x1b[0m Invalid Generation Parameters: ${response.status}`);
-        process.exit();
     }
 
     return response.json();
