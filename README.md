@@ -1,6 +1,4 @@
-![Alt text](https://raw.githubusercontent.com/ryzvision/prodia/main/assets/prodia-banner.jpg "a title")
-
-# Prodia Image API
+# Prodia AI Image API
 
 This is a Node.js library for accessing the [Prodia API](https://docs.prodia.com/reference/getting-started). It allows you to easily create AI images.
 
@@ -23,34 +21,43 @@ First, you need to import the library and set your API key:
 ```js
 const prodia = require("prodia-ai");
 
-prodia.key("YOUR_API_KEY_HERE");
+prodia.key("----------"); // Get your API key at https://app.prodia.com/
 ```
 
 ## Creating a Job
 ```js
-const job = await prodia.createJob({
-  model: "sdv1_4.ckpt [7460a6fa]",
-  prompt: "puppies in a cloud, 4k",
-  negative_prompt: "",
-  seed: 100,
-  steps: 30,
-  cfg_scale: 7,
-});
+(async () => {
+    const prodia = require("prodia-ai");
 
-console.log("Job Created! Waiting...");
+    prodia.key("----------");
 
-while (job.status !== "succeeded" && job.status !== "failed") {
-  await new Promise((resolve) => setTimeout(resolve, 250));
+    let job = await prodia.createJob({
+        model: "v1-5-pruned-emaonly.ckpt [81761151]", // Intellicode will list all models. if you are not using intellicode, you can find all models here: https://docs.prodia.com/reference/generate
+        prompt: "a portrait of an old coal miner in 19th century, beautiful painting with highly detailed face by greg rutkowski and magali villanueve",
+        negative_prompt: "no text, no blur",
+        seed: -1,
+        steps: 35,
+        cfg_scale: 7,
+    });
 
-  job = await prodia.getJob(job.job);
-}
+    console.log("Job Created! Waiting...");
 
-if (job.status !== "succeeded") {
-  throw new Error("Job failed!");
-}
+    while (job.status !== "succeeded" && job.status !== "failed") {
+        await new Promise((resolve) => setTimeout(resolve, 250));
 
-console.log("Generation completed!", job.imageUrl);
+        job = await prodia.getJob(job.job);
+    }
+
+    if (job.status !== "succeeded") {
+        throw new Error("Job failed!");
+    }
+
+    console.log("Generation completed!", job.imageUrl);
+})()
 ```
+
+## List of Models
+https://docs.prodia.com/reference/generate
 
 ## API
 `prodia.key(key)`
@@ -65,6 +72,8 @@ Creates a new generation job with the specified parameters.
 - `seed` - The random seed to use for generation.
 - `steps` - The number of steps to run the model for.
 - `cfg_scale` - The scale of the configuration space to use for generation.
+- `sampler` - The sampler to use for generation.
+- `aspect_ratio` - The aspect ratio to use for generation. Defaults to "square".
 
 Returns a Promise that resolves to an object representing the created job.
 
