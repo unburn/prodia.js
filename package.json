@@ -1,6 +1,6 @@
 {
-  "name": "prodia-ai",
-  "version": "1.12.0",
+  "name": "prodia.js",
+  "version": "1.0.0",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
   "scripts": {
@@ -22,16 +22,16 @@
   ],
   "author": "FlameFace",
   "license": "MIT",
-  "description": "Prodia-powered AI image generator: unleash your creativity with lightning-fast performance and transform your ideas into stunning visuals in seconds. (unofficial)",
+  "description": "Prodia is AI image generator: unleash your creativity with lightning-fast performance and transform your ideas into stunning visuals in seconds.",
   "dependencies": {
     "node-fetch": "^2.6.7"
   },
-  "homepage": "https://github.com/ryzvision/prodia-ai",
+  "homepage": "https://github.com/ryzvision/prodia.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ryzvision/prodia-ai.git"
+    "url": "https://github.com/ryzvision/prodia.js.git"
   },
   "bugs": {
-    "url": "https://github.com/ryzvision/prodia-ai/issues"
+    "url": "https://github.com/ryzvision/prodia.js/issues"
   }
 }
