@@ -3,7 +3,6 @@ declare module 'prodia.js' {
         | "analog-diffusion-1.0.ckpt [9ca13f02]"
         | "anythingv3_0-pruned.ckpt [2700c435]"
         | "anything-v4.5-pruned.ckpt [65745d25]"
-        | "anythingV5_PrtRE.safetensors [893e49b9]"
         | "AOM3A3_orangemixs.safetensors [9600da17]"
         | "deliberate_v2.safetensors [10ec4b29]"
         | "dreamlike-diffusion-1.0.safetensors [5c9fd6e0]"
