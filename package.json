@@ -1,6 +1,6 @@
 {
   "name": "prodia.js",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "build/index.js",
   "typings": "build/index.d.ts",
   "scripts": {
@@ -10,7 +10,7 @@
     "build"
   ],
   "engines": {
-    "node": ">=18"
+    "node": ">=16"
   },
   "keywords": [
     "prodia",
@@ -18,7 +18,9 @@
     "image",
     "ai-image",
     "ai-image-generator",
-    "text2image"
+    "text2image",
+    "prodia.js",
+    "image2image"
   ],
   "author": "FlameFace",
   "license": "MIT",
@@ -26,12 +28,12 @@
   "dependencies": {
     "node-fetch": "^2.6.7"
   },
-  "homepage": "https://github.com/ryzvision/prodia.js",
+  "homepage": "https://prodia.js.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ryzvision/prodia.js.git"
+    "url": "https://github.com/A3PIRE/prodia.js.git"
   },
   "bugs": {
-    "url": "https://github.com/ryzvision/prodia.js/issues"
+    "url": "https://github.com/A3PIRE/prodia.js/issues"
   }
 }
