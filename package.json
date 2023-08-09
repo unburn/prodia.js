@@ -1,10 +1,10 @@
 {
   "name": "prodia.js",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "main": "build/index.js",
-  "typings": "build/index.d.ts",
+  "types": "build/index.d.ts",
   "scripts": {
-    "test": "node example/imageGenerator.js"
+    "test": "node example/text2image.js"
   },
   "files": [
     "build"
@@ -24,7 +24,7 @@
   ],
   "author": "FlameFace",
   "license": "MIT",
-  "description": "Prodia is AI image generator: unleash your creativity with lightning-fast performance and transform your ideas into stunning visuals in seconds.",
+  "description": "A Powerful image API client for prodia",
   "dependencies": {
     "node-fetch": "^2.6.7"
   },
