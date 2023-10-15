@@ -1,69 +1,124 @@
-interface Job {
-    job: String,
-    status: String,
-    imageUrl: String
+export type JobParams = {
+    job: String;
+    status: "queued" | "generating" | "failed" | "succeeded";
+    imageUrl: String;
 }
 
-interface generateImageParams {
-    job: String,
-    status: String
+export type JobOutput = {
+    job: String;
+    status: "queued" | "generating" | "failed" | "succeeded";
+}
+
+export type GenerateImageParams = {
+    model: string;
+    prompt: string;
+    negative_prompt?: string;
+    steps?: number;
+    cfg_scale?: number;
+    seed?: number;
+    upscale?: boolean;
+    sampler?: boolean;
+    aspect_ratio?: "square" | "portrait" | "landscape";
+}
+
+type ImageInput = {
+    imageUrl: string;
+} | {
+    imageData: string;
+}
+
+type MaskInput = {
+    maskUrl: string
+} | {
+    maskData: string
+}
+
+export type TransformImageParams = ImageInput & {
+    model: string;
+    prompt: string;
+    denoising_strength?: string;
+    negative_prompt?: string;
+    steps?: number;
+    cfg_scale?: number;
+    seed?: number;
+    upscale?: number;
+    sampler?: string;
+    width?: number;
+    height?: number;
+}
+
+export type InpaintParams = ImageInput & MaskInput & {
+    model: string;
+    prompt: string;
+    denoising_strength?: number;
+    negative_prompt?: string;
+    steps?: number;
+    cfg_scale?: number;
+    seed?: number;
+    upscale?: boolean;
+    mask_blur?: number;
+    inpainting_fill?: number;
+    inpainting_mask_invert?: number;
+    inpainting_full_res?: boolean;
+    sampler?: string;
+}
+
+export type ControlNetParams = ImageInput & {
+    controlnet_model: string;
+    controlnet_module: string;
+    threshold_a?: number;
+    threshold_b?: number;
+    resize_mode?: 0 | 1 | 2;
+    prompt: string;
+    negative_prompt?: string;
+    steps?: number;
+    cfg_scale?: number;
+    steps?: number;
+    sampler?: string;
+    height?: number;
+    width?: number;
+}
+
+export type SDXLParams = {
+    model: string;
+    prompt: string;
+    negative_prompt?: string;
+    steps?: number;
+    cfg_scale?: number;
+    seed?: number;
+    sampler?: string;
+}
+
+export type UpscaleParams = ImageInput & {
+    resize: 2 | 4
 }
 
 export declare class Prodia {
     constructor(apiKey: string);
 
-    public generateImage(params: {
-        model?: String,
-        prompt: String,
-        negativePrompt?: String,
-        steps?: Number,
-        cfgScale?: Number,
-        seed?: Number,
-        upscale?: Boolean,
-        sampler?: String,
-        aspectRatio?: Number,
-    }): Promise<generateImageParams>;
+    public generateImage(params: GenerateImageParams): Promise<JobOutput>;
 
-    public transformImage(params: {
-        imageUrl: String,
-        model?: String,
-        prompt: String,
-        negativePrompt?: String,
-        steps?: Number,
-        cfgScale?: Number,
-        seed?: Number,
-        upscale?: Boolean,
-        sampler?: String,
-    }): Promise<void>;
+    public transformImage(params: TransformImageParams): Promise<JobOutput>;
 
-    public controlNet(params: {
-        imageUrl: String,
-        cnModel?: String,
-        cnModule?: String,
-        thresholdA?: Number,
-        thresholdB?: Number,
-        resizeMode?: Number,
-        prompt: String,
-        negativePrompt?: String,
-        steps?: Number,
-        cfgScale?: Number,
-        sampler?: String,
-        height?: Number,
-        width?: Number
-    }): Promise<void>;
+    public inPaint(params: InpaintParams): Promise<JobOutput>;
 
-    public sdxl(params: {
-        model?: String,
-        prompt: String,
-        negativePrompt?: String,
-        steps?: Number,
-        cfgScale?: Number,
-        seed?: Number,
-        sampler?: String
-    }): Promise<void>;
+    public controlNet(params: ControlNetParams): Promise<JobOutput>;
 
+    public SDXL(params: SDXLParams): Promise<JobOutput>;
 
-    public getJob(jobId: String): Promise<Job>;
+    public upscale(params: UpscaleParams): Promise<JobOutput>
 
-    public getModels(): Promise<void>;
+    public getJob(jobId: String): Promise<JobParams>;
+
+    public getSDmodels(): Promise<void>;
+
+    public getSDXLmodels(): Promise<void>;
+
+    public getSDsamplers(): Promise<void>;
+
+    public getSDXLsamplers(): Promise<void>;
+
+    public getSDloras(): Promise<void>;
+
+    public getSDXLloras(): Promise<void>;
 }

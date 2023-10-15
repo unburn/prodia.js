@@ -1,11 +1,8 @@
 {
-  "name": "prodia.js",
-  "version": "2.0.0",
+  "name": "prodia",
+  "version": "2.1.0",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "scripts": {
-    "test": "node example/text2image.js"
-  },
   "files": [
     "build"
   ],
@@ -22,17 +19,22 @@
     "sdxl",
     "image2image"
   ],
+  "devDependencies": {},
+  "dependencies": {
+    "request": "^2.88.2"
+  },
   "author": "FlameFace",
   "license": "MIT",
-  "description": "Prodia.js is a simple wrapper for the Prodia API with latest features.",
-  "dependencies": {
-    "undici": "^5.23.0"
-  },
+  "description": "A simple and up to date wrapper for prodia api with all features included",
   "repository": {
     "type": "git",
-    "url": "https://github.com/A3PIRE/prodia.js.git"
+    "url": "git+https://github.com/A3PIRE/prodia.js.git"
   },
   "bugs": {
     "url": "https://github.com/A3PIRE/prodia.js/issues"
+  },
+  "homepage": "https://github.com/A3PIRE/prodia.js#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

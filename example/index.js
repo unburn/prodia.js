@@ -1,11 +1,10 @@
+const { Prodia } = require("../build/index");
+const prodia = new Prodia("cfbc771f-3347-4652-89b9-12a0950cbcca");
+
 (async () => {
-    const { Prodia } = require("../build/index");
-
-    const prodia = new Prodia("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx");
-
-    const generate = await prodia.sdxl({
-        prompt: "breathtaking night street of Tokyo, neon lights. award-winning, professional, highly detailed",
-        model: "dreamshaperXL10_alpha2.safetensors [c8afe2ef]"
+    const generate = await prodia.upscale({
+        imageUrl: "https://s6.imgcdn.dev/ZEQqw.jpg",
+        resize: 4
     })
 
     while (generate.status !== "succeeded" && generate.status !== "failed") {

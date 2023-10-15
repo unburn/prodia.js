@@ -1,13 +1,13 @@
 async function handleResponseError(response) {
-    const statusCode = response.status;
+    const statusCode = response.statusCode;
 
     switch (statusCode) {
         case 401:
-            return new Error("Invalid API Key. See https://app.prodia.com/api for more information.");
+            return new Error("API Access Not Enabled");
         case 402:
-            return new Error("API Key has been disabled. See https://app.prodia.com/api for more information.");
+            return new Error("API Access Not Enabled");
         case 400:
-            return new Error("Invalid Request. See https://app.prodia.com/api for more information.");
+            return new Error("Invalid Generation Parameters");
         default:
             return new Error(`An error occurred with status code: ${statusCode}`);
     }
