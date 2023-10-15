@@ -1,6 +1,6 @@
 {
-  "name": "prodia",
-  "version": "2.1.0",
+  "name": "prodia.js",
+  "version": "2.1.1",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "files": [
