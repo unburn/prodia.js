@@ -44,7 +44,7 @@ const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
 ```
 
 ### Preview
-![SDGEN](./assets/sdgen.png)
+![SDGEN](https://raw.githubusercontent.com/a3pire/prodia.js/main/assets/sdgen.png)
 
 ## **Image to Image**
 
@@ -79,7 +79,7 @@ const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
 ```
 
 ### Preview
-![transform](./assets/transform.png)
+![transform](https://raw.githubusercontent.com/a3pire/prodia.js/main/assets/transform.png)
 
 ## **Control Net**
 
@@ -110,7 +110,7 @@ const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
 ```
 
 ### Preview
-![controlnet](./assets/ctrlnet.png)
+![controlnet](https://raw.githubusercontent.com/a3pire/prodia.js/main/assets/ctrlnet.png)
 
 ## **SDXL**
 
@@ -142,7 +142,7 @@ const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
 ```
 
 ### Preview
-![SDXL](./assets/sdxl.png)
+![SDXL](https://raw.githubusercontent.com/a3pire/prodia.js/main/assets/sdxl.png)
 
 ## **Upscale**
 ```js
