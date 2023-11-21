@@ -1,12 +1,6 @@
 # **About**
 A simple and up to date wrapper for **prodia** with all features included
 
-* Generate images from text or images.
-* ControlNet images.
-* Upscale image
-* Get list of models & samplers
-* SDXL, Loras & Inpaint
-
 # **Installation**
 ```
 npm install prodia.js

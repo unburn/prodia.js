@@ -41,6 +41,7 @@ class Prodia {
             model: params.model,
             prompt: params.prompt,
             negative_prompt: params.negative_prompt,
+            style_preset: params.style_preset,
             steps: params.steps,
             cfg_scale: params.cfg_scale,
             seed: params.seed,
@@ -60,6 +61,7 @@ class Prodia {
             prompt: params.prompt,
             denoising_strength: params.denoising_strength,
             negative_prompt: params.negative_prompt,
+            style_preset: params.style_preset,
             steps: params.steps,
             cfg_scale: params.cfg_scale,
             seed: params.seed,
@@ -82,6 +84,7 @@ class Prodia {
             prompt: params.prompt,
             denoising_strength: params.denoising_strength,
             negative_prompt: params.negative_prompt,
+            style_preset: params.style_preset,
             steps: params.steps,
             cfg_scale: params.cfg_scale,
             seed: params.seed,
@@ -102,14 +105,16 @@ class Prodia {
             imageData: params.imageData,
             controlnet_model: params.controlnet_model,
             controlnet_module: params.controlnet_module,
+            control_mode: params.control_mode,
             threshold_a: params.threshold_a,
             threshold_b: params.threshold_b,
             resize_mode: params.resize_mode,
             prompt: params.prompt,
             negative_prompt: params.negative_prompt,
+            style_preset: params.style_preset,
             steps: params.steps,
             cfg_scale: params.cfg_scale,
-            steps: params.steps,
+            seed: params.seed,
             sampler: params.sampler,
             height: params.height,
             width: params.width
@@ -123,13 +128,64 @@ class Prodia {
             model: params.model,
             prompt: params.prompt,
             negative_prompt: params.negative_prompt,
+            style_preset: params.style_preset,
             steps: params.steps,
             cfg_scale: params.cfg_scale,
             seed: params.seed,
             sampler: params.sampler,
+            width: params.width,
+            height: params.height
         }
 
         return this.sendRequest("/sdxl/generate", "POST", body);
+    }
+
+    async transformSDXLImage(params) {
+        const body = {
+            imageUrl: params.imageUrl,
+            imageData: params.imageData,
+            model: params.model,
+            prompt: params.prompt,
+            denoising_strength: params.denoising_strength,
+            negative_prompt: params.negative_prompt,
+            style_preset: params.style_preset,
+            steps: params.steps,
+            cfg_scale: params.cfg_scale,
+            seed: params.seed,
+            upscale: params.upscale,
+            sampler: params.sampler,
+            width: params.width,
+            height: params.height
+        }
+
+        return this.sendRequest("/sdxl/transform", "POST", body);
+    }
+
+    async inPaintSDXL(params) {
+        const body = {
+            imageUrl: params.imageUrl,
+            imageData: params.imageData,
+            maskUrl: params.maskUrl,
+            maskData: params.maskData,
+            model: params.model,
+            prompt: params.prompt,
+            denoising_strength: params.denoising_strength,
+            negative_prompt: params.negative_prompt,
+            style_preset: params.style_preset,
+            steps: params.steps,
+            cfg_scale: params.cfg_scale,
+            seed: params.seed,
+            upscale: params.upscale,
+            mask_blur: params.mask_blur,
+            inpainting_fill: params.inpainting_fill,
+            inpainting_mask_invert: params.inpainting_mask_invert,
+            inpainting_full_res: params.inpainting_full_res,
+            sampler: params.sampler,
+            width: params.width,
+            height: params.height
+        }
+
+        return this.sendRequest("/sdxl/inpainting", "POST", body);
     }
 
     async upscale(params) {
