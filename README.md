@@ -38,7 +38,7 @@ const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
 ```
 
 ### Preview
-![SDGEN](https://raw.githubusercontent.com/a3pire/prodia.js/main/assets/sdgen.png)
+![SDGEN](https://raw.githubusercontent.com/burnxpofficial/prodia.js/main/assets/sdgen.png)
 
 ## **Image to Image**
 
@@ -73,7 +73,7 @@ const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
 ```
 
 ### Preview
-![transform](https://raw.githubusercontent.com/a3pire/prodia.js/main/assets/transform.png)
+![transform](https://raw.githubusercontent.com/burnxpofficial/prodia.js/main/assets/transform.png)
 
 ## **Control Net**
 
@@ -104,7 +104,7 @@ const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
 ```
 
 ### Preview
-![controlnet](https://raw.githubusercontent.com/a3pire/prodia.js/main/assets/ctrlnet.png)
+![controlnet](https://raw.githubusercontent.com/burnxpofficial/prodia.js/main/assets/ctrlnet.png)
 
 ## **SDXL**
 
@@ -136,7 +136,7 @@ const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
 ```
 
 ### Preview
-![SDXL](https://raw.githubusercontent.com/a3pire/prodia.js/main/assets/sdxl.png)
+![SDXL](https://raw.githubusercontent.com/burnxpofficial/prodia.js/main/assets/sdxl.png)
 
 ## **Upscale**
 ```js
@@ -163,4 +163,4 @@ const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
 ```
 
 # **Help**
-If you need help or want some features to be added, join our official **[A3PIRE](https://discord.gg/qDysF95NWh)** community & the official **[Prodia](https://discord.gg/22s88bSe6h)** server.
+If you need help or want some features to be added, join our official **[burnxpofficial](https://discord.gg/qDysF95NWh)** community & the official **[Prodia](https://discord.gg/22s88bSe6h)** server.
