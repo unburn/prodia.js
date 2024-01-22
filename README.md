@@ -188,7 +188,7 @@ const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
 })()
 ```
 ### Preview
-![FaceRestore](https://raw.githubusercontent.com/unburn/prodia.js/main/facerestore.png)
+![FaceRestore](https://raw.githubusercontent.com/unburn/prodia.js/main/assets/facerestore.png)
 
 ## **Upscale**
 ```js
