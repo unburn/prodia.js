@@ -188,6 +188,24 @@ class Prodia {
         return this.sendRequest("/sdxl/inpainting", "POST", body);
     }
 
+    async faceSwap(params) {
+        const body = {
+            sourceUrl: params.sourceUrl,
+            targetUrl: params.targetUrl
+        }
+
+        return this.sendRequest("/faceswap", "POST", body);
+    }
+
+    async faceRestore(params) {
+        const body = {
+            imageUrl: params.imageUrl,
+            imageData: params.imageData
+        }
+
+        return this.sendRequest("/facerestore", "POST", body);
+    }
+
     async upscale(params) {
         const body = {
             imageUrl: params.imageUrl,
@@ -224,6 +242,14 @@ class Prodia {
 
     async getSDXLloras() {
         return this.sendRequest("/sdxl/loras", "GET")
+    }
+
+    async getSDembeddings() {
+        return this.sendRequest("/sd/embeddings", "GET")
+    }
+
+    async getSDXLembeddings() {
+        return this.sendRequest("/sdxl/embeddings", "GET")
     }
 }
 

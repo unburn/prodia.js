@@ -38,7 +38,7 @@ const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
 ```
 
 ### Preview
-![SDGEN](https://raw.githubusercontent.com/burnxpofficial/prodia.js/main/assets/sdgen.png)
+![SDGEN](https://raw.githubusercontent.com/unburn/prodia.js/main/assets/sdgen.png)
 
 ## **Image to Image**
 
@@ -73,7 +73,7 @@ const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
 ```
 
 ### Preview
-![transform](https://raw.githubusercontent.com/burnxpofficial/prodia.js/main/assets/transform.png)
+![transform](https://raw.githubusercontent.com/unburn/prodia.js/main/assets/transform.png)
 
 ## **Control Net**
 
@@ -104,7 +104,7 @@ const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
 ```
 
 ### Preview
-![controlnet](https://raw.githubusercontent.com/burnxpofficial/prodia.js/main/assets/ctrlnet.png)
+![controlnet](https://raw.githubusercontent.com/unburn/prodia.js/main/assets/ctrlnet.png)
 
 ## **SDXL**
 
@@ -136,7 +136,59 @@ const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
 ```
 
 ### Preview
-![SDXL](https://raw.githubusercontent.com/burnxpofficial/prodia.js/main/assets/sdxl.png)
+![SDXL](https://raw.githubusercontent.com/unburn/prodia.js/main/assets/sdxl.png)
+
+## **Face Swap**
+```js
+const { Prodia } = require("prodia.js");
+const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
+
+(async () => {
+    const generate = await prodia.faceSwap({
+        sourceUrl: "https://api.time.com/wp-content/uploads/2014/10/4568715041.jpg",
+        targetUrl: "https://www.baltana.com/files/wallpapers-14/Captain-America-Wallpapers-Full-HD-37890.jpg",
+    });
+
+    while (generate.status !== "succeeded" && generate.status !== "failed") {
+        new Promise((resolve) => setTimeout(resolve, 250));
+
+        const job = await prodia.getJob(generate.job);
+
+        if (job.status === "succeeded") {
+            console.log(job);
+            break;
+        }
+    }
+})()
+```
+
+### Preview
+![FaceSwap](https://raw.githubusercontent.com/unburn/prodia.js/main/assets/faceswap.png)
+
+## Face Restore
+```js
+const { Prodia } = require("prodia.js");
+const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
+
+(async () => {
+    const generate = await prodia.faceRestore({
+        imageUrl: "https://images.prodia.xyz/73f3b014-8bb6-4c81-821c-379734790ffe.png"
+    })
+
+    while (generate.status !== "succeeded" && generate.status !== "failed") {
+        new Promise((resolve) => setTimeout(resolve, 250));
+
+        const job = await prodia.getJob(generate.job);
+
+        if (job.status === "succeeded") {
+            console.log(job);
+            break;
+        }
+    }
+})()
+```
+### Preview
+![FaceRestore](https://raw.githubusercontent.com/unburn/prodia.js/main/facerestore.png)
 
 ## **Upscale**
 ```js
@@ -163,4 +215,4 @@ const prodia = new Prodia("x-x-x-x-x"); // API KEY HERE
 ```
 
 # **Help**
-If you need help or want some features to be added, join our official **[burnxpofficial](https://discord.gg/qDysF95NWh)** community & the official **[Prodia](https://discord.gg/22s88bSe6h)** server.
+If you need help or want some features to be added, join our official **[Discord](https://discord.gg/qDysF95NWh)** community & the official **[Prodia](https://discord.gg/22s88bSe6h)** server.

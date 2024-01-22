@@ -1,6 +1,6 @@
 {
   "name": "prodia.js",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "files": [
@@ -17,7 +17,9 @@
     "prodiajs",
     "controlnet",
     "sdxl",
-    "image2image"
+    "image2image",
+    "face-swap",
+    "face-restore"
   ],
   "devDependencies": {},
   "dependencies": {
@@ -28,12 +30,12 @@
   "description": "A simple and up to date wrapper for prodia api with all features included",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/burnxpofficial/prodia.js.git"
+    "url": "https://github.com/unburn/prodia.js.git"
   },
   "bugs": {
-    "url": "https://github.com/burnxpofficial/prodia.js/issues"
+    "url": "https://github.com/unburn/prodia.js/issues"
   },
-  "homepage": "https://github.com/burnxpofficial/prodia.js#readme",
+  "homepage": "https://github.com/unburn/prodia.js#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -81,7 +81,7 @@ export type ControlNetParams = ImageInput & {
     style_preset?: StylePresent;
     steps?: number;
     cfg_scale?: number;
-    steps?: number;
+    seed?: number;
     sampler?: string;
     height?: number;
     width?: number;
@@ -134,6 +134,13 @@ export type inPaintSDXLParams = ImageInput & MaskInput & {
     height?: number;
 }
 
+export type faceSwapParams = {
+    sourceUrl: string;
+    targetUrl: string;
+}
+
+export type faceRestoreParams = ImageInput
+
 export type UpscaleParams = ImageInput & {
     resize: 2 | 4
 }
@@ -147,6 +154,8 @@ export declare class Prodia {
     public SDXL(params: SDXLParams): Promise<JobOutput>;
     public transformSDXLImage(params: transformSDXLImageParams): Promise<JobOutput>;
     public inPaintSDXL(params: inPaintSDXLParams): Promise<JobOutput>;
+    public faceSwap(params: faceSwapParams): Promise<JobOutput>;
+    public faceRestore(params: faceRestoreParams): Promise<JobOutput>;
     public upscale(params: UpscaleParams): Promise<JobOutput>
     public getJob(jobId: String): Promise<JobParams>;
     public getSDmodels(): Promise<void>;
@@ -155,4 +164,6 @@ export declare class Prodia {
     public getSDXLsamplers(): Promise<void>;
     public getSDloras(): Promise<void>;
     public getSDXLloras(): Promise<void>;
+    public getSDembeddings(): Promise<void>;
+    public getSDXLembeddings(): Promise<void>;
 }
